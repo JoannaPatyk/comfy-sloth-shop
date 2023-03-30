@@ -68,7 +68,7 @@ const NavContainer = styled.nav`
         display: flex;
         align-items: center;
         margin-left: -20px;
-        margin-top: 5rem;
+        margin-top: 0.8rem;
         img {
             width: 80px;
         }

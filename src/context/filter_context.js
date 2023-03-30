@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import reducer from '../reducers/filter_reducer';
 import {
     LOAD_PRODUCTS,
-    SET_GRIDVIEW,
-    SET_LISTVIEW,
+    SET_GRID_VIEW,
+    SET_LIST_VIEW,
     UPDATE_SORT,
     SORT_PRODUCTS,
     UPDATE_FILTERS,
@@ -46,14 +46,12 @@ export const FilterProvider = ({ children }) => {
     }, [products, state.sort, state.filters]);
 
     const setGridView = () => {
-        dispatch({ type: SET_GRIDVIEW });
+        dispatch({ type: SET_GRID_VIEW });
     };
     const setListView = () => {
-        dispatch({ type: SET_LISTVIEW });
+        dispatch({ type: SET_LIST_VIEW });
     };
     const updateSort = (e) => {
-        // for demonstration
-        // const name = e.target.name
         const value = e.target.value;
         dispatch({ type: UPDATE_SORT, payload: value });
     };

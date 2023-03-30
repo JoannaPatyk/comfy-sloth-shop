@@ -44,21 +44,26 @@ const Wrapper = styled.section`
         border-radius: var(--radius);
         margin-bottom: 1rem;
     }
+
     h4 {
         margin-bottom: 0.5rem;
     }
+
     .price {
         color: var(--clr-primary-6);
         margin-bottom: 0.75rem;
     }
+
     p {
         max-width: 45em;
         margin-bottom: 1rem;
     }
+
     .btn {
-        font-size: 0.5rem;
+        font-size: 0.9rem;
         padding: 0.25rem 0.5rem;
     }
+
     @media (min-width: 992px) {
         article {
             display: grid;

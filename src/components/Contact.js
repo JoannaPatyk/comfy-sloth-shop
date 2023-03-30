@@ -25,6 +25,7 @@ const Contact = () => {
 
 const Wrapper = styled.section`
     padding: 5rem 0;
+    text-align: center;
 
     .section-center {
         display: flex;
@@ -67,6 +68,7 @@ const Wrapper = styled.section`
 
     .form-input,
     .submit-btn {
+        width: 110%;
         font-size: 1rem;
         padding: 0.5rem 1rem;
         border: 1px solid var(--clr-primary-5);
@@ -83,7 +85,7 @@ const Wrapper = styled.section`
     .submit-btn {
         border-top-right-radius: var(--radius);
         border-bottom-right-radius: var(--radius);
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Nunito', sans-serif;
     }
 
     .form-input::placeholder {

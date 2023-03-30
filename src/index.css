@@ -38,7 +38,7 @@
 }
 
 /* font-family: 'Kranky', cursive;
-font-family: 'Montserrat', sans-serif; */
+font-family: 'Nunito', sans-serif; */
 
 *,
 ::after,
@@ -49,7 +49,7 @@ font-family: 'Montserrat', sans-serif; */
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
     background: var(--clr-white);
     color: var(--clr-primary-3);
     line-height: 1.5;

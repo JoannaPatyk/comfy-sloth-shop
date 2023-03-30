@@ -1,34 +1,19 @@
 import React from 'react';
-import logo from '../assets/logo-abstract.png';
 import { Link } from 'react-router-dom';
 import { useProductsContext } from '../context/products_context';
-import { FaTimes } from 'react-icons/fa';
+import { ImUndo2 } from 'react-icons/im';
 import { links } from '../utils/constants';
 import styled from 'styled-components';
-import CartButtons from './CartButtons';
-import { useUserContext } from '../context/user_context';
 
 const Sidebar = () => {
     const { isSidebarOpen, closeSidebar } = useProductsContext();
-    const { myUser } = useUserContext();
 
     return (
         <SidebarContainer>
             <aside className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
                 <div className="sidebar-header">
-                    <div className="sidebar-logo">
-                        <Link to="/">
-                            <img src={logo} className="logo" alt="logo" />
-                        </Link>
-                        <p className="logoTitle">
-                            <span>t</span>he
-                            <span>m</span>ost
-                            <span>c</span>ozy
-                            <span>s</span>hop
-                        </p>
-                    </div>
                     <button className="close-btn" onClick={closeSidebar}>
-                        <FaTimes />
+                        <ImUndo2 />
                     </button>
                 </div>
                 <ul className="links">
@@ -41,15 +26,15 @@ const Sidebar = () => {
                             </li>
                         );
                     })}
-                    {myUser && (
-                        <li>
-                            <Link to="/checkout" onClick={closeSidebar}>
-                                checkout
-                            </Link>
-                        </li>
-                    )}
                 </ul>
-                <CartButtons />
+                <div className="footer-logo">
+                    <p className="logoTitle">
+                        <span>t</span>he
+                        <span>m</span>ost
+                        <span>c</span>ozy
+                        <span>s</span>hop
+                    </p>
+                </div>
             </aside>
         </SidebarContainer>
     );
@@ -57,11 +42,14 @@ const Sidebar = () => {
 
 const SidebarContainer = styled.div`
     text-align: center;
+
     .sidebar-header {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
-        padding: 1rem 1.5rem;
+        height: 12vh;
+        padding: 1rem;
+        background-color: var(--clr-primary-10);
     }
 
     .close-btn {
@@ -70,41 +58,44 @@ const SidebarContainer = styled.div`
         border-color: transparent;
         color: var(--clr-primary-5);
         transition: var(--transition);
-        cursor: pointer;
-        color: var(--clr-red-dark);
+        color: var(--clr-primary-5);
         margin-top: 0.2rem;
+        cursor: pointer;
     }
 
     .close-btn:hover {
-        color: var(--clr-red-light);
-    }
-
-    .logo {
-        justify-self: center;
-        height: 100px;
-        opacity: 0.6;
+        color: var(--clr-primary-1);
     }
 
     .links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 76vh;
+        width: 100vw;
         margin-bottom: 2rem;
     }
 
     .links a {
+        width: 100vw;
         display: block;
-        text-align: left;
-        font-size: 1.1rem;
+        text-align: center;
+        font-size: 1.8rem;
         text-transform: uppercase;
         padding: 1rem 1.5rem;
-        color: var(--clr-grey-4);
+        color: var(--clr-primary-1);
         transition: var(--transition);
         letter-spacing: var(--spacing);
+        font-family: 'Kranky', cursive;
+        cursor: pointer;
     }
 
     .links a:hover {
         padding: 1rem 1.5rem;
         padding-left: 2rem;
-        background: var(--clr-grey-10);
-        color: var(--clr-grey-2);
+        background-color: var(--clr-primary-8);
+        color: var(--clr-white);
     }
 
     .sidebar {
@@ -119,27 +110,6 @@ const SidebarContainer = styled.div`
         z-index: -1;
     }
 
-    .sidebar-logo {
-        position: relative;
-        display: flex;
-        align-items: center;
-        margin-top: 1rem;
-    }
-
-    .logoTitle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-transform: uppercase;
-        font-weight: 300;
-        font-size: 1rem;
-    }
-
-    .logoTitle span {
-        font-size: 1.8rem;
-        color: var(--clr-primary-7);
-    }
-
     .show-sidebar {
         transform: translate(0);
         z-index: 999;
@@ -147,6 +117,34 @@ const SidebarContainer = styled.div`
 
     .cart-btn-wrapper {
         margin: 2rem auto;
+    }
+
+    .logoTitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 0.7rem;
+        font-family: 'Kranky', cursive;
+    }
+
+    .logoTitle span {
+        font-size: 1.8rem;
+        color: var(--clr-primary-7);
+    }
+
+    .footer-logo {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 12vh;
+        width: 100%;
+        background-color: var(--clr-primary-10);
     }
 
     @media screen and (min-width: 992px) {

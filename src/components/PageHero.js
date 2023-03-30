@@ -18,7 +18,7 @@ const PageHero = ({ title, product }) => {
 
 PageHero.propTypes = {
     title: PropTypes.string,
-    product: PropTypes.string
+    product: PropTypes.any
 };
 
 const Wrapper = styled.section`

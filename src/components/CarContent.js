@@ -8,6 +8,7 @@ import CartTotals from './CartTotals';
 
 const CartContent = () => {
     const { cart, clearCart } = useCartContext();
+
     return (
         <Wrapper className="section section-center">
             <CartColumns />
@@ -16,10 +17,10 @@ const CartContent = () => {
             })}
             <hr />
             <div className="link-container">
-                <Link to="/products" className="link-btn">
+                <Link to="/products" className="link-btn btn">
                     continue shopping
                 </Link>
-                <button type="button" className="link-btn clear-btn" onClick={clearCart}>
+                <button type="button" className="link-btn clear-btn btn" onClick={clearCart}>
                     clear shopping cart
                 </button>
             </div>
@@ -34,6 +35,7 @@ const Wrapper = styled.section`
         justify-content: space-between;
         margin-top: 2rem;
     }
+
     .link-btn {
         background: transparent;
         border-color: transparent;
@@ -44,10 +46,11 @@ const Wrapper = styled.section`
         border-radius: var(--radius);
         letter-spacing: var(--spacing);
         font-weight: 300;
-        font-size: 0.8rem;
-        font-family: inherit;
+        font-size: 1rem;
+        font-family: 'Kranky', cursive;
         cursor: pointer;
     }
+
     .clear-btn {
         background: var(--clr-black);
     }

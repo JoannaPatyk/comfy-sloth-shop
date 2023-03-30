@@ -5,24 +5,19 @@ import styled from 'styled-components';
 const ProductImages = ({ images = [{ url: '' }] }) => {
     const [main, setMain] = useState(images[0]);
 
-    const handleClick = (index) => {
-        setMain(images[index]);
-    };
-
     return (
         <Wrapper>
             <img src={main.url} alt="main" className="main" />
             <div className="gallery">
                 {images.map((image, index) => {
                     return (
-                        <input
-                            type="image"
-                            src={image.url}
-                            alt={image.filename}
-                            key={index}
-                            onClick={handleClick(index)}
-                            className={`${image.url === main.url ? 'active' : null}`}
-                        />
+                        <div key={index} onClick={() => setMain(images[index])} role="presentation">
+                            <img
+                                src={image.url}
+                                alt={image.filename}
+                                className={`${image.url === main.url ? 'active' : null}`}
+                            />
+                        </div>
                     );
                 })}
             </div>
@@ -31,7 +26,7 @@ const ProductImages = ({ images = [{ url: '' }] }) => {
 };
 
 ProductImages.propTypes = {
-    images: PropTypes.array
+    images: PropTypes.any
 };
 
 const Wrapper = styled.section`

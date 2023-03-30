@@ -51,6 +51,7 @@ const Wrapper = styled.section`
         padding-bottom: 0.5rem;
         display: grid;
         gap: 2rem;
+
         img {
             height: 250px;
         }

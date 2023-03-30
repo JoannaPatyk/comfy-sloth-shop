@@ -11,10 +11,10 @@ const Services = () => {
                         custom furniture <br />
                         built only for yor
                     </h3>
-                    <p>
+                    <h4>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio commodi nobis vero
                         incidunt, assumenda ex consectetur. Ad unde minima officia.
-                    </p>
+                    </h4>
                 </article>
                 <div className="services-center">
                     {services.map((service) => {
@@ -22,7 +22,7 @@ const Services = () => {
                         return (
                             <article key={id} className="service">
                                 <span className="icon">{icon}</span>
-                                <h4>{title}</h4>
+                                <h3>{title}</h3>
                                 <p>{text}</p>
                             </article>
                         );
@@ -34,21 +34,25 @@ const Services = () => {
 };
 
 const Wrapper = styled.section`
+    padding: 2rem 0;
+    background: var(--clr-primary-10);
+
+    h3 {
+        font-family: 'Kranky', cursive;
+        font-weight: 500;
+        font-size: 2.4rem;
+    }
+
+    h4 {
+        font-weight: 300;
+        text-align: justify;
+    }
+
     h3,
     h4 {
         color: var(--clr-primary-1);
-        font-weight: 500;
         line-height: 1.5;
-        font-family: 'Kranky', cursive;
     }
-
-    h4 {
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-
-    padding: 2rem 0;
-    background: var(--clr-primary-10);
 
     .header h3 {
         margin-bottom: 2rem;
@@ -58,6 +62,7 @@ const Wrapper = styled.section`
         margin-bottom: 0;
         line-height: 1.8;
         font-weight: 300;
+        font-size: 1rem;
         color: var(--clr-primary-2);
         text-align: justify;
     }

@@ -59,6 +59,7 @@ const Wrapper = styled.article`
         transition: var(--transition);
         opacity: 0;
         cursor: pointer;
+
         svg {
             font-size: 1.25rem;
             color: var(--clr-white);
@@ -66,7 +67,7 @@ const Wrapper = styled.article`
     }
 
     .container:hover img {
-        opacity: 0.6;
+        opacity: 0.5;
     }
 
     .container:hover .link {
@@ -82,7 +83,9 @@ const Wrapper = styled.article`
 
     footer h5 {
         font-size: 0.9rem;
-        font-weight: 500;
+        font-weight: 700;
+        font-family: 'Kranky', cursive;
+        color: var(--clr-primary-1);
     }
 
     footer p {

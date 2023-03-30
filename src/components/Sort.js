@@ -19,7 +19,7 @@ const Sort = () => {
             <p>{products.length} products found</p>
             <hr />
             <form>
-                <label htmlFor="sort">sort by:</label>
+                <label htmlFor="sort">sort by: </label>
                 <select name="sort" id="sort" className="sort-input" value={sort} onChange={updateSort}>
                     <option value="price-lowest">lowest price</option>
                     <option value="price-highest">highest price</option>
@@ -42,9 +42,11 @@ const Wrapper = styled.section`
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 0.75rem;
+
         .btn-container {
             width: 50px;
         }
+
         label {
             display: inline-block;
             margin-right: 0.5rem;
@@ -57,15 +59,17 @@ const Wrapper = styled.section`
 
     p {
         margin-bottom: 0;
+        color: var(--clr-primary-1);
     }
 
     .btn-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 0.5rem;
+
         button {
             background: transparent;
-            border: 1px solid var(--clr-black);
+            border: 1px solid var(--clr-primary-1);
             color: var(--clr-black);
             width: 1.5rem;
             border-radius: var(--radius);
@@ -74,24 +78,27 @@ const Wrapper = styled.section`
             align-items: center;
             justify-content: center;
             cursor: pointer;
+
             svg {
                 font-size: 1rem;
             }
         }
 
         .active {
-            background: var(--clr-black);
+            background: var(--clr-primary-1);
             color: var(--clr-white);
         }
     }
 
     .sort-input {
         border-color: transparent;
-        font-size: 1rem;
+        border-radius: 0.15em;
+        font-size: 0.9rem;
         font-weight: 300;
         text-transform: uppercase;
         padding: 0.25rem 0.5rem;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Nunito', sans-serif;
+        background-color: var(--clr-primary-10);
         outline: none;
     }
 

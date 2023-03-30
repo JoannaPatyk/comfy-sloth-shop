@@ -1,7 +1,7 @@
 import {
     LOAD_PRODUCTS,
-    SET_LISTVIEW,
-    SET_GRIDVIEW,
+    SET_LIST_VIEW,
+    SET_GRID_VIEW,
     UPDATE_SORT,
     SORT_PRODUCTS,
     UPDATE_FILTERS,
@@ -25,14 +25,14 @@ const filter_reducer = (state, action) => {
         };
     }
 
-    if (action.type === SET_GRIDVIEW) {
+    if (action.type === SET_GRID_VIEW) {
         return {
             ...state,
             grid_view: true
         };
     }
 
-    if (action.type === SET_LISTVIEW) {
+    if (action.type === SET_LIST_VIEW) {
         return {
             ...state,
             grid_view: false

@@ -62,7 +62,7 @@ const AddToCart = ({ product }) => {
 };
 
 AddToCart.propTypes = {
-    product: PropTypes.array
+    product: PropTypes.object
 };
 
 const Wrapper = styled.section`
@@ -85,6 +85,9 @@ const Wrapper = styled.section`
     }
 
     .color-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         display: inline-block;
         width: 1.5rem;
         height: 1.5rem;
@@ -92,11 +95,9 @@ const Wrapper = styled.section`
         background: #222;
         margin-right: 0.5rem;
         border: none;
-        cursor: pointer;
         opacity: 0.5;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        cursor: pointer;
+
         svg {
             font-size: 0.75rem;
             color: var(--clr-white);

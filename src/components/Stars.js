@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
+import { BsStarHalf, BsStar } from 'react-icons/bs';
+import { TiStarFullOutline } from 'react-icons/ti';
 
 const Stars = ({ stars, reviews }) => {
     const tempStars = Array.from({ length: 5 }, (_, index) => {
-        const number = index + 0.5;
+        const number = index + 0.75;
         return (
             <span key={index}>
-                {stars >= index + 1 ? <BsStarFill /> : stars >= number ? <BsStarHalf /> : <BsStar />}
+                {stars >= index + 1 ? <TiStarFullOutline /> : stars >= number ? <BsStarHalf /> : <BsStar />}
             </span>
         );
     });
@@ -29,15 +30,18 @@ Stars.propTypes = {
 const Wrapper = styled.div`
     display: flex;
     align-items: center;
+    margin-bottom: 0.5rem;
+
     span {
-        color: #ffb900;
+        color: #fae20a;
         font-size: 1rem;
         margin-right: 0.25rem;
     }
+
     p {
         margin-left: 0.5rem;
         margin-bottom: 0;
+        color: var(--clr-primary-1);
     }
-    margin-bottom: 0.5rem;
 `;
 export default Stars;
