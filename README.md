@@ -17,3 +17,10 @@ And run application by calling:
 ```shell
 npm start
 ```
+
+## Technologies
+
+* `React`,
+* `Styled-components`,
+* `Axios`,
+* `Auth0`.
